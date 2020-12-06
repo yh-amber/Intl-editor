@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import App from './App.vue';
-
-const root = document.getElementById('#app')
+import store from './store/index';
 
 new Vue({
   el: '#app',
   template: '<App />',
+  store,
   components: { 
     'App': App
   }

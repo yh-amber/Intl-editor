@@ -1,0 +1,24 @@
+{
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "module": "esnext",
+    "target": "ES5",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "strict": true,
+    "lib": [
+      "DOM",
+      "ES5",
+      "ES2015",
+      "ES2015.Promise"
+    ]
+  }
+}

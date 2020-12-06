@@ -1,0 +1,10 @@
+{
+  "locales": "zh-Hans-CN",
+  "data": {
+    "navbar.home": "首页",
+    "navbar.repository": "仓库",
+    "navbar.project": "项目",
+    "navbar.profile": "用户资料",
+    "navbar.setting": "设置"
+  }
+}

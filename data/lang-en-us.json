@@ -1,0 +1,10 @@
+{
+  "locales": "en-US",
+  "data": {
+    "navbar.home": "Home",
+    "navbar.repository": "Repository",
+    "navbar.project": "Project",
+    "navbar.profile": "Profile",
+    "navbar.setting": "Settings"
+  }
+}
