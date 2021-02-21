@@ -32,6 +32,18 @@ module.exports = {
         loader: 'babel-loader',
         include: [path.resolve(__dirname, './src/')],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
+        include: [path.resolve(__dirname, './src/')],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style-loader!css-loader!sass-loader',
+        include: [path.resolve(__dirname, './src/')],
+        exclude: /node_modules/,
       }
     ]
   },

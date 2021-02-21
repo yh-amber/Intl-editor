@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h3>Intl Message DashBoard</h3>
+  <div class="app_container">
+    <h4>Intl Message DashBoard</h4>
     <editor-board />
   </div>
 </template>
@@ -21,5 +21,8 @@
 </script>
 
 <style scoped>
-
+  .app_container {
+    padding: 5px 10px;
+    background-color: transparent;
+  }
 </style>

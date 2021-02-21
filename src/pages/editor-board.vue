@@ -2,6 +2,7 @@
   <table>
     <tr>
       <th v-for="locale in headers" :key="locale">{{locale}}</th>
+      <th />
     </tr>
     <message-row v-for="(val, mid) in contents" :mid="mid" :value="val" :key="mid" />
   </table>
@@ -31,5 +32,31 @@
 </script>
 
 <style scoped>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    /* border:solid 1px #cccccc; */
+  }
+
+  tr:nth-child(odd) {
+    background-color: #dcedef;
+  }
+
+  tr:first-child {
+    background-color: #97c5b0;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.656em 0.25em;
+  }
+
+  th:first-child {
+    width: 12em;
+  }
+
+  th:last-child {
+    width: 6em;
+  }
 
 </style>

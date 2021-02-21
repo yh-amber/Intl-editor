@@ -1,4 +1,4 @@
-export function getAll(path:string) {
+function getAll(path:string) {
   return fetch(`http://localhost:9000${path}`, {
     credentials: 'same-origin',
     headers: {
@@ -9,5 +9,11 @@ export function getAll(path:string) {
   .then((responses: any) => {
     return responses.json();
   })
-  .catch(err => console.log(err))
+  .catch(err => {
+    return err;
+  })
+}
+
+export default {
+  getAll,
 }
