@@ -56,7 +56,7 @@
   }
 
   th:last-child {
-    width: 6em;
+    width: 7em;
   }
 
 </style>

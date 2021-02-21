@@ -4,12 +4,20 @@
     <td v-for="(msg, loc) in editingValues" :key="loc">
       <textarea v-model="editingValues[loc]" placeholder=""></textarea>
     </td>
-    <td><span v-on:click="onLeaveChange">Back</span>&nbsp;<span @click="onConfirmChange">Confirm</span></td>
+    <td>
+      <span @click="onLeaveChange">Back</span>
+      &nbsp;
+      <span @click="onConfirmChange">Confirm</span>
+    </td>
   </tr>
   <tr v-else>
     <td>{{ mid }}</td>
     <td v-for="(msg, loc) in value" :key="loc">{{ msg }}</td>
-    <td><span>Delete</span>&nbsp;<span v-on:click="onEditRowData(mid,value)">Modify</span></td>
+    <td>
+      <span @click="onDeleteRowData(mid)">Delete</span>
+      &nbsp;
+      <span @click="onEditRowData(mid,value)">Modify</span>
+    </td>
   </tr>
 </template>
 
@@ -34,6 +42,7 @@
     @Action('onEditMessage') onEditMessage !: Function;
     @Action('onConfirmChange') onConfirmChange !: Function;
     @Action('onLeaveChange') onLeaveChange !: Function;
+    @Action('onDeleteRowData') onDeleteRowData !: Function;
 
     private onEditRowData(mid: string, value: any) {
       const data = { id: mid, values: { ...value } };
@@ -54,7 +63,7 @@
 
   textarea {
     width: 98%;
-    height: auto;
+    box-sizing: border-box;
   }
 
 </style>

@@ -7,12 +7,37 @@ export async function initBoardData(context: any) {
 }
 
 export function onEditMessage(context: any, data: any) {
-  context.commit('getEditingMessage', data)
+  context.commit('setEditingMessage', data)
 }
 
-export function onConfirmChange(context: any) {
-  console.log('--------------', context);
-  context.commit('completeModification')
+export async function onDeleteRowData(context: any, mid: string) {
+  await apis.deleteMessageById(`/intl/delete/${mid}`);
+
+  initBoardData(context);
+}
+
+export async function onConfirmChange(context: any) {
+  const { contents, editingId, editingValues } = context.state;
+
+  const initData = contents[editingId] || {};
+
+  const editingData: any = {};
+
+  for (const key in editingValues) {
+    if (editingValues[key] !== initData[key]) {
+      editingData[key] = editingValues[key];
+    }
+  }
+
+  if (Object.keys(editingData).length > 0) {
+    editingData.id = editingId;
+
+    await apis.modifyMessageById('/intl/edit', editingData);
+  }
+
+  context.commit('completeModification');
+
+  initBoardData(context);
 }
 
 export function onLeaveChange(context: any) {

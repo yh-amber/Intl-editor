@@ -1,6 +1,6 @@
 <template>
   <div class="app_container">
-    <h4>Intl Message DashBoard</h4>
+    <h4>Intl Message Editing Board</h4>
     <editor-board />
   </div>
 </template>

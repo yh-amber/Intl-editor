@@ -3,12 +3,13 @@ import VueX from 'vuex';
 import {
   initBoardData,
   onEditMessage,
+  onDeleteRowData,
   onConfirmChange,
   onLeaveChange
 } from './actions';
 import {
   setContents,
-  getEditingMessage,
+  setEditingMessage,
   completeModification,
   castOffChange
 } from './mutations';
@@ -26,13 +27,14 @@ const store = new VueX.Store({
   state: initialState,
   mutations: {
     setContents,
-    getEditingMessage,
+    setEditingMessage,
     completeModification,
     castOffChange
   },
   actions: {
     initBoardData,
     onEditMessage,
+    onDeleteRowData,
     onConfirmChange,
     onLeaveChange
   }
