@@ -5,18 +5,18 @@
       <textarea v-model="editingValues[loc]" placeholder=""></textarea>
     </td>
     <td>
-      <span @click="onLeaveChange">Back</span>
+      <svg-icon :onClick="onLeaveChange" icon-name="back"></svg-icon>
       &nbsp;
-      <span @click="onConfirmChange">Confirm</span>
+      <svg-icon :onClick="onConfirmChange" icon-name="confirm"></svg-icon>
     </td>
   </tr>
   <tr v-else>
     <td>{{ mid }}</td>
     <td v-for="(msg, loc) in value" :key="loc">{{ msg }}</td>
     <td>
-      <span @click="onDeleteRowData(mid)">Delete</span>
+      <svg-icon :onClick="onDelete(mid)" icon-name="delete"></svg-icon>
       &nbsp;
-      <span @click="onEditRowData(mid,value)">Modify</span>
+      <svg-icon :onClick="onEdit(mid,value)" icon-name="edit"></svg-icon>
     </td>
   </tr>
 </template>
@@ -26,12 +26,8 @@
   import Component from 'vue-class-component';
   import { Prop } from 'vue-property-decorator';
   import { State, Action } from 'vuex-class';
-  // import Back from '../../assets/back.svg';
 
-  @Component({
-    components: {
-    }
-  })
+  @Component
   export default class EditorBoard extends Vue {
     @Prop() mid !: string;
     @Prop() value !: object;
@@ -44,10 +40,15 @@
     @Action('onLeaveChange') onLeaveChange !: Function;
     @Action('onDeleteRowData') onDeleteRowData !: Function;
 
-    private onEditRowData(mid: string, value: any) {
-      const data = { id: mid, values: { ...value } };
+    private onEdit(mid: string, value: any) {
+      return () => {
+        const data = { id: mid, values: { ...value } };
+        this.onEditMessage(data);
+      }
+    }
 
-      this.onEditMessage(data);
+    private onDelete(mid: string) {
+      return () => this.onDeleteRowData(mid)
     }
   }
 </script>

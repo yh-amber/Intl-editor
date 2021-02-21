@@ -40,10 +40,12 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader',
-        include: [path.resolve(__dirname, './src/')],
-        exclude: /node_modules/,
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        include: [path.resolve(__dirname, './assets/')],
+        options: {
+          symbolId: 'icon-[name]'
+        }
       }
     ]
   },

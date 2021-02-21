@@ -33,11 +33,10 @@ export async function onConfirmChange(context: any) {
     editingData.id = editingId;
 
     await apis.modifyMessageById('/intl/edit', editingData);
+    initBoardData(context);
   }
 
   context.commit('completeModification');
-
-  initBoardData(context);
 }
 
 export function onLeaveChange(context: any) {

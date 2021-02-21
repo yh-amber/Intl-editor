@@ -35,7 +35,6 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    /* border:solid 1px #cccccc; */
   }
 
   tr:nth-child(odd) {

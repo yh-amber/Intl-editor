@@ -1,5 +1,5 @@
 <template>
-  <div class="app_container">
+  <div class="container">
     <h4>Intl Message Editing Board</h4>
     <editor-board />
   </div>
@@ -21,7 +21,7 @@
 </script>
 
 <style scoped>
-  .app_container {
+  .container {
     padding: 5px 10px;
     background-color: transparent;
   }
