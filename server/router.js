@@ -8,13 +8,11 @@ router.get('/intl/all', (req, res) => {
 })
 
 router.post('/intl/edit', (req, res) => {
-  editMessage(req.body)
-  res.end('Edit successfully!');
+  editMessage(req.body, res);
 })
 
 router.delete('/intl/delete/:mid', (req, res) => {
-  deleteMessage(req.params.mid);
-  res.end('DELETE successfully!');
+  deleteMessage(req.params.mid, res);
 })
 
 module.exports = router;
