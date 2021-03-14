@@ -23,7 +23,7 @@ export const initialState = {
   editingValues: {},
 };
 
-const store = new VueX.Store({
+export default new VueX.Store({
   state: initialState,
   mutations: {
     setContents,
@@ -38,6 +38,4 @@ const store = new VueX.Store({
     onConfirmChange,
     onLeaveChange
   }
-})
-
-export default store
+});

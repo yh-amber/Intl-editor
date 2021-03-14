@@ -2,12 +2,17 @@ import { createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex';
 import store from './store';
 
-describe('store.ts', () => {
-  it('render a store for with initation', () => {
-    const localVue = createLocalVue()
-    localVue.use(Vuex)
+const localVue = createLocalVue()
+localVue.use(Vuex)
 
-    const storeConfig = new Vuex.Store(store)
+describe('store.ts', () => {
+  let storeConfig: any;
+
+  beforeEach(() => {
+    storeConfig = new Vuex.Store(store)
+  });
+
+  it('render a store for with initation', () => {
     expect(storeConfig.state.headers).toBe([])
 
     storeConfig.commit('setContents', { headers: ['en-US'], contents: {} })

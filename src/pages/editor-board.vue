@@ -9,9 +9,7 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue';
-  import Component from 'vue-class-component';
-  import { Prop } from 'vue-property-decorator';
+  import { Vue, Component } from 'vue-property-decorator';
   import { State, Action } from 'vuex-class';
   import MessageRow from '../components/message-row.vue';
 

@@ -5,9 +5,7 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue';
-  import Component from 'vue-class-component';
-  import { Prop } from 'vue-property-decorator';
+  import { Prop, Vue, Component } from 'vue-property-decorator';
 
   @Component
   export default class SvgIcon extends Vue {
@@ -24,7 +22,7 @@
     }
 
     get onClickIcon() {
-      return this.onClick ? this.onClick : function() { console.log('dfadffdsaf') };
+      return this.onClick ? this.onClick : function() {};
     }
   }
 </script>

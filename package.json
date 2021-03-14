@@ -62,11 +62,6 @@
       ".*\\.(vue)$": "vue-jest",
       "^.+\\.tsx?$": "ts-jest"
     },
-    "testRegex": "(/src/.*)\\.(test|spec)\\.(jsx?|tsx?)$",
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "src/**/*.{ts,vue}",
-      "!**/node_modules/**"
-    ]
+    "testRegex": "(/src/.*)\\.(test|spec)\\.(jsx?|tsx?)$"
   }
 }

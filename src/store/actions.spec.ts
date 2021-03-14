@@ -1,5 +1,5 @@
 import apis from '../service/services';
-import { initBoardData } from './actions';
+import { initBoardData, onEditMessage, onDeleteRowData, onConfirmChange, onLeaveChange } from './actions';
 
 describe('actions', () => {
   it('should get return properly for initBoardData', async () => {
